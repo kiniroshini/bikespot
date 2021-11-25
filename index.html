@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/880f0920dc.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+      body{  font-family: 'Poppins', sans-serif;
+
+      }
+        ul {
+    font-family: 'Poppins', sans-serif;
+    font-size:10px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: linear-gradient(to right, rgb(4, 37, 25) , rgb(13, 192, 162));
+  
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 7px 7px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(48, 46, 46);
+}
+
+.active {
+  background-color: #04AA6D;
+}
+.navbar {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  font-family: 'Poppins', sans-serif;
+    font-size:12px;
+}
+
+.navbar a {
+  float: left;
+  font-family: 'Poppins', sans-serif;
+    font-size:12px;
+  color: #7f7f7f;
+
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+    font-size:12px;
+  border: none;
+  outline: none;
+  color: #7f7f7f;
+  padding: 15px 15px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: rgb(230, 224, 224);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: #7f7f7f;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+.button {
+  background-color: rgb(10, 187, 157);
+  border: none;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+left: 30%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tabble {
+  table-layout: fixed ;
+  width: 100% ;
+}
+.tdd {
+  width: 40% ;
+}
+.contact-box{
+    padding: 1.5rem 1.5rem 0.1rem;
+    background-color: #F7FAFA;
+    text-align: center;
+}
+
+.contact-box .phone-icon .fas{
+    font-size: 2rem;
+    color: #3AB3DF;
+}
+
+.contact-box h3{
+    margin: 15px 0px 10px;
+}
+.container, .container-fluid{
+    margin: 3rem auto 3rem auto;
+}
+
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  
+}
+
+.image2 {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.email{
+    align-items: center;
+    padding-top: 1.875em;
+}
+
+form.email input[type=text] {
+    padding: 0.9375em;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.9375em;
+    border: 1px solid grey;
+    float: left;
+    width: 60%;
+    background: #f1f1f1;
+}
+
+form.email button {
+    float: left;
+    width: 25%;
+    padding: 0.9375em;
+    background: rgb(85, 73, 163);
+    color: white;
+    font-size: 0.9375em;
+    border: 1px solid rgb(85, 73, 163);
+    border-left: none; 
+    cursor: pointer;
+}
+
+form.email button:hover {
+    background: black;
+}
+
+form.email::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgb(13, 192, 162);
+  color: white;
+  cursor: pointer;
+ 
+  height: 45px;
+  width: 45px;
+ 
+  
+}
+.checked {
+  color: orange;
+}
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid #f1f1f1;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #f1f1f1;
+  color: white;
+  font-size: 17px;
+  border: 1px solid #f1f1f1;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #f1f1f1;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A 50 Roshini</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=PT+Sans+Narrow&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <ul> 
+        <li><a href="#home" >&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a></li>
+      <li><a href="#home" style=" font-weight: bold;">&nbsp; &nbsp;Search&nbsp;&nbsp;</a></li>
+      <div style="margin-right: 30px;">
+      <li><a href="#home" ></a></li>
+      <li style="float:right"><a href="#contact"><i class="fas fa-lock-open"></i>&nbsp;&nbsp;Register</i></a></li>&nbsp;
+      <li style="float:right"><a href="#contact"><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Login</a></li>
+     
+     
+    </div>
+    </ul>
+ 
+    
+<div style=" margin-top: 28px; font-weight:bolder;"class="navbar">
+  <img style="margin-left: 70px; float: left;" height="12%" width="12%" src="https://gust-production.s3.amazonaws.com/uploads/startup/logo_image/118560/logo.png">
+    <div class="dropdown" style="font-weight: bolder;"> &nbsp; &nbsp;  &nbsp; &nbsp;
+        <button class="dropbtn" style="font-weight: bolder;"onclick="myFunction()" >HOME
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+        </div>
+    <div class="dropdown" style="font-weight: bolder;">
+    <button class="dropbtn" style="font-weight: bolder;"onclick="myFunction()" >SEARCH
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+    </div> 
+    <div class="dropdown" style="font-weight: bolder;">
+        <button class="dropbtn" style="font-weight: bolder;"onclick="myFunction()" >COMPARE
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+        </div> 
+        <div class="dropdown" style="font-weight: bolder;">
+            <button class="dropbtn" style="font-weight: bolder;"onclick="myFunction()" >REVIEWS
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+            </div>
+            <div class="dropdown" style="font-weight: bolder;">
+                <button class="dropbtn" style="font-weight: bolder;"onclick="myFunction()" >ABOUT US
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+                </div> 
+                <div class="dropdown" style="font-weight: bolder;">
+                  <button class="dropbtn" style="font-weight: bolder;"onclick="myFunction()" >SERVICES
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content" id="myDropdown">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+                  </div> 
+                  <div class="dropdown" style="font-weight: bolder;">
+                    <button class="dropbtn" style="font-weight: bolder;"onclick="myFunction()" >PAGES
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="myDropdown">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                    </div> 
+                    <div class="dropdown" style="font-weight: bolder;">
+                      <button class="dropbtn" style="font-weight: bolder;"onclick="myFunction()" >USERS
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content" id="myDropdown">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                      </div>
+                    
+                      </div> 
+                      <button style='float: right; margin-right: 70px; ' class="button">Sell your bike</button>
+
+
+  </div>
+  <div box style="  background-image: linear-gradient(to right, rgb(4, 37, 25) , rgb(13, 192, 162));
+  ">
+    <div class="container" style="margin-top: 40px;">
+      <img  src="https://images.pexels.com/photos/1796090/pexels-photo-1796090.jpeg?cs=srgb&dl=pexels-oleg-magni-1796090.jpg&fm=jpg"  style="width:100%; height:400px;object-fit: cover;opacity: 0.2;">
+    
+      <div  style="   position: absolute;
+      top: 50%;
+      left: 20%;
+       transform: translate(-50%, -50%);
+           font-family: 'Poppins', sans-serif;">
+           <div style="height: 100px; width: 600px;margin-left: 800px;margin-top: -90px;font-size: 30PX;font-weight: bolder;">FIND WHAT ARE YOU LOOKING FOR<BR><SPAN style="font-size: 20PX;font-weight: normal;">OVER 90,000 LATEST BIKES IN DATABANK</SPAN>
+          <BR><BR>
+            <DIV STYLE="HEIGHT:100PX; WIDTH:900PX; background-color: #000000ad;margin-left: -150PX;">
+<TABLE  align="CENTER" STYLE="padding: 20PX;">
+  <TR>
+<TD>
+  <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+    <input type="text" placeholder="Select an option" name="search2">
+    <button type="submit"><i class="fas fa-caret-down" style="color: #5e5b5b;"></i></button>
+  </form>
+  
+</TD>
+<TD>
+  <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+    <input type="text" placeholder="Eg. Honda Civic, Audi, Ford.." name="search2">
+    <button type="submit"><i class="fa fa-search"style="color: #5e5b5b;"></i></button>
+  </form>
+</TD>
+<TD>
+  <form class="example" action="/action_page.php" style="margin:auto;max-width:900px">
+  <a href="#">  <input type="text" placeholder="search " name="search2" style="width:100%;background-color: #04AA6D;color: red;opacity: 1;"></a>
+  
+  
+  </form>
+</TD>
+  </TR>
+
+</TABLE>
+
+            </DIV>
+          </div>
+
+      </div>
+   
+    </div>
+</div>
+<div style="font-weight: bolder;text-align: center;">Latest <span style="color:rgb(13, 192, 162)">Featured</span> Bikes</div>
+<p  margin-top: 10em ;
+margin-bottom: 2em ;><hr width="5%"
+
+align="center" style="font-weight: bold;"></p>
+<p  margin-top: 2em ;
+margin-bottom: 2em ;> <hr width="3%"
+
+align="center" style="font-weight: bold;"> </p>
+<p align="center" style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">Eu delicata rationibus usu. Vix te putant utroque, ludus fabellas duo eu, his dico ut debet<br> consectuer.</p><br>
+<div class="container" style="color: black;   float: left; margin-left: 70px; margin-right: 70px;  font-family: 'Poppins', sans-serif;">
+  <div class="row">
+    <table class="tabble" >
+      <tr><td class="tdd" style="padding-right: -2%;">
+     
+    
+      <div class="contact-box" style="padding-bottom: 0.6%; background-color: #f6f6f6;">
+       <div style="margin-left: 15%;margin-right: 30%; ">
+        <p style="color: #7f7f7f; font-size: 12px;font-weight: bolder; margin-top: 30px;text-align: left;"><i>Want to sale your bike?</i></p>
+        <p style="color:rgb(13, 192, 162); font-size: 18px;font-weight: bolder;text-align: left;">Are you looking for a bike?<br>
+        <span style="color: #a7a4a4; font-size: 10px;font-weight: bolder; margin-top: 30px;text-align: left;">Search your car in our inventory and request a quote on the vehicle of your choosing sone.</span>
+        </p>
+      </div>  </div>
+    
+</td>
+<td class="tdd" style="padding-right: -2%;">
+     
+    
+  <div class="contact-box" style="padding-bottom: 0.6%; background-color: #f1f2f6;">
+   <div style="margin-left: 15%;margin-right: 30%; ">
+    <p style="color: #7f7f7f; font-size: 12px;font-weight: bolder; margin-top: 30px;text-align: left;"><i>Want to sale your bike?</i></p>
+    <p style="color:rgb(13, 192, 162); font-size: 18px;font-weight: bolder;text-align: left;">Do you want to sale your Bike?<br>
+    <span style="color: #a7a4a4; font-size: 10px;font-weight: bolder; margin-top: 30px;text-align: left;">Request search your car in our inventory and a quote on the vehicle of your choosing.</span>
+    </p>
+  </div>  </div>
+   
+</td>
+</tr></table>
+  </div>
+</div>
+<div style="font-weight: bolder;text-align: center;">Latest <span style="color:rgb(13, 192, 162)">Trending</span> Ads</div>
+<p  margin-top: 10em ;
+margin-bottom: 2em ;><hr width="5%"
+
+align="center" style="font-weight: bold;"></p>
+<p  margin-top: 2em ;
+margin-bottom: 2em ;> <hr width="3%"
+
+align="center" style="font-weight: bold;"> </p>
+<p align="center" style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">Eu delicata rationibus usu. Vix te putant utroque, ludus fabellas duo eu, his dico ut debet<br> consectuer.</p><br>
+<div style="margin-left: 120px;margin-right: 120px;">
+<table width="100%">
+  <colgroup>
+      <col width="5%"><col width="5%">
+      <col width="5%"><col width="5%">
+      <col width="5%"><col width="5%">
+      <col width="5%"><col width="5%">
+      <col width="5%"><col width="5%">
+      <col width="5%"><col width="5%">
+      <col width="5%"><col width="5%">
+      <col width="5%"><col width="5%">
+      <col width="5%"><col width="5%">
+      <col width="5%"><col width="5%">
+  </colgroup>
+  <tr>
+      <td colspan=5><div class="parent"><img class="image1" style="object-fit: contain;" height="100%" width="100%" src="https://images.financialexpress.com/2020/12/Odyssey-Evoqis_001.jpg?w=692" > <img height="15%" width="10%" class="image2" src="https://www.pngall.com/wp-content/uploads/5/Profile-PNG-File.png" /></div></td>
+    <div style="border: dimgrey;border-style: solid; border-width: 0.3px;" ><td colspan=11 > <div style="margin-left: 3%;margin-right: 30%; height: 150px; border-right-style: solid;border-color: silver;
+        width: 95%;"><span style="font-weight: bold;">Honda Cbr 600</span><br>
+      <i style="font-size: smaller;color: rgb(182, 180, 182)"class="fas fa-map-marker-alt"></i>  <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">Bloomfield,New Jersey, United States</span>
+    &nbsp; &nbsp;<i style="font-size: smaller;color: rgb(182, 180, 182)" class="far fa-clock"></i> <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">July 28, 2017</span><br>
+    <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;"> On The Wheel was established in 2006 and has grown fast to become one of south's top motorcycle shops. Our state ...</span><br><br>
+    <i style="font-size: smaller;color: rgb(182, 180, 182)"class="fas fa-tachometer-alt"></i>  <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">8,000 km</span> &nbsp;
+    <i style="font-size: smaller;color: rgb(182, 180, 182)"class="fab fa-creative-commons-zero"></i>  <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">1500 cc</span> &nbsp;
+    <i style="font-size: smaller;color: rgb(182, 180, 182)"class="fas fa-car-side"></i>  <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">SxS & UTV</span> &nbsp;
+    <i style="font-size: smaller;color: rgb(182, 180, 182)"class="fas fa-cog"></i>  <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">Bronze</span> &nbsp;
+
+    </div></td>
+      <td colspan=5 ><div style="margin-left: 7%;margin-right: 30%; height: 150px;
+        width: 90%;">
+        <span style="font-family: 'Nunito', sans-serif;
+        font-family: 'Poppins', sans-serif;
+        font-family: 'PT Sans Narrow', sans-serif; font-size:medium;">Ad Type:</span><span  style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">&nbsp;Sell</span><br>
+        <span style="font-family: 'Nunito', sans-serif;
+        font-family: 'Poppins', sans-serif;
+        font-family: 'PT Sans Narrow', sans-serif; font-size:medium;">Condition:</span><span  style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">&nbsp;New</span><br>
+    <span style="font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'PT Sans Narrow', sans-serif; font-size:medium;">Visits:</span><span  style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">&nbsp;2080</span>  <br>
+    <p style="color:rgb(13, 192, 162); font-size: 18px;font-weight: bolder;">$ 3,343<span  style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">&nbsp;(FIXED)</span>  <br>
+      <button style='font-size: small;padding-left: 25%;padding-right:25%;padding-top: 5%;padding-bottom: 5%;width: 100%; ' class="button"><i style="font-size: medium;" class="fas fa-eye"></i>&nbsp;<span style='font-size: smaller; '>VIEW AD</span></button>
+  </div></td> </div>
+  </tr>
+ 
+</table></div>
+&nbsp; &nbsp;
+<div style="margin-left: 120px;margin-right: 120px;">
+  <table width="100%">
+    <colgroup>
+        <col width="5%"><col width="5%">
+        <col width="5%"><col width="5%">
+        <col width="5%"><col width="5%">
+        <col width="5%"><col width="5%">
+        <col width="5%"><col width="5%">
+        <col width="5%"><col width="5%">
+        <col width="5%"><col width="5%">
+        <col width="5%"><col width="5%">
+        <col width="5%"><col width="5%">
+        <col width="5%"><col width="5%">
+    </colgroup>
+    <tr>
+        <td colspan=5><div class="parent"><img class="image1" style="object-fit: contain;" height="100%" width="100%" src="https://images.pexels.com/photos/2317519/pexels-photo-2317519.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" > <img height="15%" width="10%" class="image2" src="https://www.pngall.com/wp-content/uploads/5/Profile-PNG-File.png" /></div></td>
+      <div style="border: dimgrey;border-style: solid; border-width: 0.3px;" ><td colspan=11 > <div style="margin-left: 3%;margin-right: 30%; height: 150px; border-right-style: solid;border-color: silver;
+          width: 95%;"><span style="font-weight: bold;">Kawasaki Ninja Bike</span><br>
+        <i style="font-size: smaller;color: rgb(182, 180, 182)"class="fas fa-map-marker-alt"></i>  <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">Bloomfield,New Jersey, United States</span>
+      &nbsp; &nbsp;<i style="font-size: smaller;color: rgb(182, 180, 182)" class="far fa-clock"></i> <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">July 28, 2017</span><br>
+      <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;"> On The Wheel was established in 2006 and has grown fast to become one of south's top motorcycle shops. Our state ...</span><br><br>
+      <i style="font-size: smaller;color: rgb(182, 180, 182)"class="fas fa-tachometer-alt"></i>  <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">8,000 km</span> &nbsp;
+      <i style="font-size: smaller;color: rgb(182, 180, 182)"class="fab fa-creative-commons-zero"></i>  <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">1500 cc</span> &nbsp;
+      <i style="font-size: smaller;color: rgb(182, 180, 182)"class="fas fa-car-side"></i>  <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">SxS & UTV</span> &nbsp;
+      <i style="font-size: smaller;color: rgb(182, 180, 182)"class="fas fa-cog"></i>  <span style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">Bronze</span> &nbsp;
+  
+      </div></td>
+        <td colspan=5 ><div style="margin-left: 7%;margin-right: 30%; height: 150px;
+          width: 90%;">
+          <span style="font-family: 'Nunito', sans-serif;
+          font-family: 'Poppins', sans-serif;
+          font-family: 'PT Sans Narrow', sans-serif; font-size:medium;">Ad Type:</span><span  style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">&nbsp;Sell</span><br>
+          <span style="font-family: 'Nunito', sans-serif;
+          font-family: 'Poppins', sans-serif;
+          font-family: 'PT Sans Narrow', sans-serif; font-size:medium;">Condition:</span><span  style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">&nbsp;New</span><br>
+      <span style="font-family: 'Nunito', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      font-family: 'PT Sans Narrow', sans-serif; font-size:medium;">Visits:</span><span  style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">&nbsp;2080</span>  <br>
+      <p style="color:rgb(13, 192, 162); font-size: 18px;font-weight: bolder;">$ 3,343<span  style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">&nbsp;(FIXED)</span>  <br>
+        <button style='font-size: small;padding-left: 25%;padding-right:25%;padding-top: 5%;padding-bottom: 5%;width: 100%; ' class="button"><i style="font-size: medium;" class="fas fa-eye"></i>&nbsp;<span style='font-size: smaller; '>VIEW AD</span></button>
+    </div></td> </div>
+    </tr>
+   
+  </table></div>
+  <div box style="  background-color: black;
+  ">
+  <div class="container">
+    <img src="https://images.pexels.com/photos/1796090/pexels-photo-1796090.jpeg?cs=srgb&dl=pexels-oleg-magni-1796090.jpg&fm=jpg" alt="bikes" style="width:100%;height: 300px;object-fit: cover;opacity: 0.2;">
+    
+    <div class="centered" style="margin-top: 10px;margin-bottom: 50px;"><table style="margin-bottom: 50px;">
+      <tr>
+        <td style=" padding: 0 90px;"><i style="font-size: 50px;padding: 40px;" class="fas fa-motorcycle"></i><span style="font-weight: bolder; font-size: 28px;">1238</span><br>Total<span style="color:rgb(13, 192, 162);"> Bikes</span></td>
+        <td style=" padding: 0 90px;"><i style="font-size: 50px;padding: 40px;" class="fas fa-shield-virus"></i><span style="font-weight: bolder; font-size: 28px;">820</span><br>Verified<span style="color:rgb(13, 192, 162);"> Dealers</span></td>
+        <td style=" padding: 0 90px;"><i style="font-size: 50px;padding: 40px;" class="far fa-heart"></i><span style="font-weight: bolder; font-size: 28px;">1024</span><br>Active<span style="color:rgb(13, 192, 162);"> Users</span></td>
+        <td style=" padding: 0 90px;"><i style="font-size: 50px;padding: 40px;" class="fas fa-globe"></i><span style="font-weight: bolder; font-size: 28px;">75</span><br>Featured<span style="color:rgb(13, 192, 162);"> Ads</span></td>
+      </tr>
+    </table></div>
+  </div></div>
+  <div style="font-weight: bolder;text-align: center;">Latest <span style="color:rgb(13, 192, 162)">Blog</span> Post</div>
+<p  margin-top: 10em ;
+margin-bottom: 2em ;><hr width="5%"
+
+align="center" style="font-weight: bold;"></p>
+<p  margin-top: 2em ;
+margin-bottom: 2em ;> <hr width="3%"
+
+align="center" style="font-weight: bold;"> </p>
+<p align="center" style="font-size: smaller; color: rgb(182, 180, 182); font-weight: bolder;">Eu delicata rationibus usu. Vix te putant utroque, ludus fabellas duo eu, his dico ut debet<br> consectuer.</p><br>
+<div style="margin-left: 120px;margin-right: 120px;">
+  <table style="margin-bottom: 50px; border: #b9b8b8;"  >
+    <tr>
+      <td style=" padding: 0 10px;"><div style="height:240px;width: 320px;background-color: brown;"><img height="240px" width="320px" src="https://bd.gaadicdn.com/processedimages/jawa-motorcycles/42/640X309/4260262dfc7506d.jpg"></div><span style="font-weight: bolder; font-size: 12px; color: rgb(182, 180, 182)"><br>June 30, 2017 &nbsp; &nbsp; &nbsp; 0 Comments</span><br><br><span>Heavy Bikes Production For North America Will Cease For A Year<hr></td>
+     
+      <td style=" padding: 0 10px;"><div style="height:240px;width: 320px;background-color: brown;"><img height="240px" width="320px" src="https://media.zigcdn.com/media/model/2021/Apr/rear-left-view-322751522_300x200.jpg"></div><span style="font-weight: bolder; font-size: 12px; color: rgb(182, 180, 182)"><br>June 30, 2017 &nbsp; &nbsp; &nbsp; 0 Comments</span><br><br>We Hear: Yamaha RS Models Could Be Offered In Rear-Wheel<hr></td>
+      
+      <td style=" padding: 0 10px;"><div style="height:240px;width: 320px;background-color: brown;"><img height="240px" width="320px" src="https://www.royalenfield.com/content/dam/royal-enfield/united-kingdom/motorcycles/home/interceptor-new.jpg"></div><span style="font-weight: bolder; font-size: 12px; color: rgb(182, 180, 182)"><br>June 30, 2017 &nbsp; &nbsp; &nbsp; 0 Comments</span><br><br>Land Rover Freelander 2 Se First Impression<hr></td>
+    
+    </tr>
+  </table></div>
+  
+ 
+
+    <div box style="  background-color: rgb(0, 0, 0);
+  ">
+    <div class="container" style="margin-top: 40px;">
+      <img  src="https://images.pexels.com/photos/1796090/pexels-photo-1796090.jpeg?cs=srgb&dl=pexels-oleg-magni-1796090.jpg&fm=jpg"  style="width:100%; height:350px;object-fit: cover;opacity: 0.2;">
+      
+     
+   
+      <div  style="   position: absolute;
+      top: 50%;
+      left: 20%;
+       transform: translate(-50%, -50%);
+           font-family: 'Poppins', sans-serif;">
+       
+       <div style="margin-left: 120px;margin-right: 120px;">
+        <table style="margin-bottom: 50px; border: #b9b8b8;margin-left: 720px; margin-top: 60px;"  >
+          <tr>
+        
+            
+            <td style=" padding: 0 10px;"><div style="height:240px;width: 320px;background-color: rgb(255, 255, 255); text-align: left;"><br><SPAN STYLE="margin-left: 14PX;color: #000000;font-weight: bolder;">VERY QUICK AND FAST SUPPORT</SPAN><br><div STYLE="margin-left: 14PX;;margin-right: 14px; color: #494848;font-size: 14px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et dolor eget erat fringilla port.</div>
+              <br>          <div style="height: 100px;width: 100px; margin-left: 12px;background-color: rgb(255, 255, 255);float: left;"><img style="height: 100px;width: 100px; border-radius: 50%;  object-fit: cover;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjwu1Na7vE-fbx-4Xa9qkpLAO4trnLclgw0A&usqp=CAU"></div>
+              <div style="height: 100px;width: 180px; margin-left: 122px;color: #000000;">Hania Sheikh<span style="margin-right: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height="12px" width="12px" src="https://www.nicepng.com/png/detail/73-736548_double-quotation-marks-end-wap-comments-double-inverted.png"></span><br><span style="color: rgb(122, 119, 119); font-size: 15PX;">CEO pvt. ltd.</span>
+                <br>
+                <span class="fa fa-star checked"style="font-size: small;"></span>
+                <span class="fa fa-star checked"style="font-size: small;"></span>
+                <span class="fa fa-star checked"style="font-size: small;"></span>
+                <span class="fa fa-star checked"style="font-size: small;"></span>
+                <span class="fa fa-star" style="font-size: small;"></span>
+                </div>
+                        </div></td>
+
+                        <td style=" padding: 0 10px;"><div style="height:240px;width: 320px;background-color: rgb(255, 255, 255); text-align: left;"><br><SPAN STYLE="margin-left: 14PX;color: #000000;font-weight: bolder;">DONE IN 3 MONTHS</SPAN><br><div STYLE="margin-left: 14PX;;margin-right: 14px; color: #494848;font-size: 14px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et dolor eget erat fringilla port.</div>
+                          <br>          <div style="height: 100px;width: 100px; margin-left: 12px;background-color: rgb(255, 255, 255);float: left;"><img style="height: 100px;width: 100px; border-radius: 50%;  object-fit: cover;"src="https://media.istockphoto.com/photos/smiling-mixed-race-mature-man-on-grey-background-picture-id1319763895?b=1&k=20&m=1319763895&s=170667a&w=0&h=jhqKyg62cQVZ-NjDQjpcenCdHDrprkN4caRjk4K76E8="></div>
+                          <div style="height: 100px;width: 210px; margin-left: 122px;color: #000000;">Humayun Sarfaraz<span style="margin-right: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height="12px" width="12px" src="https://www.nicepng.com/png/detail/73-736548_double-quotation-marks-end-wap-comments-double-inverted.png"></span><br><span style="color: rgb(122, 119, 119);font-size: 15PX;">CTO GLIXEN TECH</span>
+                            <br>
+                            <span class="fa fa-star checked" style="font-size: small;"></span>
+                            <span class="fa fa-star checked"style="font-size: small;"></span>
+                            <span class="fa fa-star checked"style="font-size: small;"></span>
+                            <span class="fa fa-star checked"style="font-size: small;"></span>
+                            <span class="fa far fa-star checked"style="font-size: small;"></span>
+                            </div>
+                                    </div></td>
+           
+                                    <td style=" padding: 0 10px;"><div style="height:240px;width: 320px;background-color: rgb(255, 255, 255); text-align: left;"><br><SPAN STYLE="margin-left: 14PX;color: #000000;font-weight: bolder;">JUST FABULOUS THEME</SPAN><br><div STYLE="margin-left: 14PX;;margin-right: 14px; color: #494848;font-size: 14px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et dolor eget erat fringilla port.</div>
+                                      <br>          <div style="height: 100px;width: 100px; margin-left: 12px;;float: left;"><img style="height: 100px;width: 100px; border-radius: 50%;  object-fit: cover;"src="https://image.shutterstock.com/image-photo/headshot-portrait-smiling-african-american-260nw-1667439898.jpg"></div>
+                                      <div style="height: 100px;width: 180px; margin-left: 122px;color: #000000;">Arslan Tariq<span style="margin-right: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height="12px" width="12px" src="https://www.nicepng.com/png/detail/73-736548_double-quotation-marks-end-wap-comments-double-inverted.png"></span><br><span style="color: rgb(122, 119, 119);font-size: 15PX;">CTO ALBANA Inc.</span>
+                                        <br>
+                                        <span class="fa fa-star checked"style="font-size: small;"></span>
+                                        <span class="fa fa-star checked"style="font-size: small;"></span>
+                                        <span class="fa fa-star checked"style="font-size: small;"></span>
+                                        <span class="fa fa-star "style="font-size: small;"></span>
+                                        <span class="fa fa-star" style="font-size: small;"></span>
+                                        </div>
+                                                </div></td>
+          </tr>
+        </table></div>
+    
+           </div>
+    </div></div>
+
+  <div style="height: 450px;width: 100%;background-color: rgb(255, 255, 255);">
+    <div class="container" style="color: black;   float: left; margin-left: 40px; margin-right: 70px;  font-family: 'Poppins', sans-serif;">
+      <div class="row">
+        <table class="tabble" >
+          <tr><td class="tdd" style="padding-right: -2%;">
+         
+        
+          <div class="contact-box" style="padding-bottom: 0.6%;background-color: white; ">
+           <div style="margin-left: 5%;margin-right: 30%; ">
+           <img height="300px" width="120%" style="margin-left: 90px;" src="https://www.heromotocorp.com/en-in/uploads/bike/bike_pic_main/20200401093850-bike-140.jpg">
+          </div>  </div>
+        
+    </td>
+    <td class="tdd" style="padding-right: -2%;">
+         
+       
+      <div class="contact-box" style="padding-bottom: 0.6%; background-color: white;border: tomato;">
+       <div style="margin-left: 7%;margin-right: 7%;border: tomato; ">
+        <p style="color: #7f7f7f; font-size: 12px;font-weight: bolder; margin-top: 30px;text-align: left;"><i>Want to sale your bike?</i></p>
+        <p style="color:rgb(0, 0, 0); font-size: 18px;font-weight: bolder;text-align: left;">Bike inspection<br>
+        <span style="color: #a7a4a4; font-size: 10px;font-weight: bolder; margin-top: 30px;text-align: left;">Our CarSure experts inspect the car on over 200 checkpoints so you get complete satisfaction and peace of mind before buying.</span>
+        </p>
+        <table style="margin-left: -20px;" >
+          <tr>
+            <td style=" padding: 0 22px; text-align: left;">
+              <i class="fas fa-check" style="color:rgb(13, 192, 162);font-size: 10px;"></i><span style="color:#7f7f7f;font-size: 10px;text-align: left;"> Transmission</span>
+            </td>
+            <td style=" padding: 0 22px; text-align: left;">
+              <i class="fas fa-check" style="color:rgb(13, 192, 162);font-size: 10px;"></i><span style="color:#7f7f7f;font-size: 10px;text-align: left;"> Steering</span>
+
+            </td>
+            <td style=" padding: 0 22px ;text-align: left;">
+              <i class="fas fa-check" style="color:rgb(13, 192, 162);font-size: 10px;font-weight: bolder;"></i><span style="color:#7f7f7f;font-size: 10px;text-align: left;"> Engine</span>
+
+            </td>
+          </tr>
+
+          <tr>
+            <td style=" padding: 0 22px;text-align: left;">
+              <i class="fas fa-check" style="color:rgb(13, 192, 162);font-size: 10px;"></i><span style="color:#7f7f7f;font-size: 10px;text-align: left;"> Tires</span>
+
+            </td>
+            <td style=" padding: 0 22px;text-align: left;">
+              <i class="fas fa-check" style="color:rgb(13, 192, 162);font-size: 10px;"></i><span style="color:#7f7f7f;font-size: 10px;text-align: left;"> Lighting</span>
+
+            </td>
+            <td style=" padding: 0 22px;text-align: left;">
+              <i class="fas fa-check" style="color:rgb(13, 192, 162);font-size: 10px;"></i><span style="color:#7f7f7f;font-size: 10px;text-align: left;"> Interior</span>
+
+            </td>
+          </tr>
+
+          <tr>
+            <td style=" padding: 0 22px;text-align: left;">
+              <i class="fas fa-check" style="color:rgb(13, 192, 162);font-size: 10px;"></i><span style="color:#7f7f7f;font-size: 10px;text-align: left;"> Suspension</span>
+
+            </td>
+            <td style=" padding: 0 22px;text-align: left;">
+              <i class="fas fa-check" style="color:rgb(13, 192, 162);font-size: 10px;"></i><span style="color:#7f7f7f;font-size: 10px;text-align: left;"> Exterior</span>
+
+            </td>
+            <td style=" padding: 0 22px;text-align: left;">
+              <i class="fas fa-check" style="color:rgb(13, 192, 162);font-size: 10px;"></i><span style="color:#7f7f7f;font-size: 10px;text-align: left;"> Brakes</span>
+
+            </td>
+          </tr>
+
+          <tr>
+            <td style=" padding: 0 22px;text-align: left;">
+              <i class="fas fa-check" style="color:rgb(13, 192, 162);font-size: 10px;"></i><span style="color:#7f7f7f;font-size: 10px;text-align: left;"> Air Conditioning</span>
+
+            </td>
+            <td style=" padding: 0 22px;text-align: left;">
+              <i class="fas fa-check" style="color:rgb(13, 192, 162);font-size: 10px;"></i><span style="color:#7f7f7f;font-size: 10px;text-align: left;"> Engine Diagnostics</span>
+
+            </td>
+            <td style=" padding: 0 22px;text-align: left;">
+              <i class="fas fa-check" style="color:rgb(13, 192, 162);font-size: 10px;"></i><span style="color:#7f7f7f;font-size: 10px;text-align: left;"> Wheel Alignment</span>
+
+            </td>
+          </tr>
+        </table><br>
+        <button style="background-color: rgb(13, 192, 162);
+        border: none;
+        color: white;
+        padding: 10px 70px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        margin-left: -180px;
+        cursor: pointer;font-size: 10PX;">SCHEDULE INSPECTION > </button>
+      </div></div></td>  </tr></table>
+       <br><br>
+<div style="height: 350px;width: 100%; background-color: tomato;">
+  <div box style="  background-color: rgb(245, 245, 245);height:350px
+  ">
+  <div style="font-weight: bolder;text-align: left;margin-left: 50px;padding-top: 30px;">Ads <span style="color:rgb(13, 192, 162)">By Make</span> </div>
+  <p  margin-top: 10em ;
+margin-bottom: 2em ;><hr width="5%"
+
+align="left" style="font-weight: bold;margin-left: 50px"></p>
+<p  margin-top: 2em ;
+margin-bottom: 2em ;> <hr width="3%"
+
+align="left" style="font-weight: bold;margin-left: 50px"> </p>
+  <div class="container">
+    <img src="https://images.pexels.com/photos/1796090/pexels-photo-1796090.jpeg?cs=srgb&dl=pexels-oleg-magni-1796090.jpg&fm=jpg" alt="bikes" style="width:100%;height: 300px;object-fit: cover;opacity: 0;">
+    
+    <div class="centered" style="margin-top: 10px;margin-bottom: 50px;">
+      <table style="width:50%;" >
+      <tr>
+        <td style=" padding: 0 22px;">
+          <div style="height: 150px;width: 150px;padding: 2px;"><img style="height:150px;width:150px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/1200px-BMW.svg.png"> </div>
+        </td>
+        <td  style=" padding: 0 18px;"> <div style="height: 150px;width: 150px;"> <img style="height:150px;width:150px;" src="https://www.carlogos.org/car-logos/honda-logo-1700x1150.png"> </div>
+        </td>
+        <td style=" padding: 0 18px;">   <div style="height: 150px;width: 150px;"><img style="height:150px;width:150px;" src="https://upload.wikimedia.org/wikipedia/commons/6/66/Ducati_red_logo.PNG"></div>
+        </td>
+        <td style=" padding: 0 18px;">   <div style="height: 150px;width: 150px;"><img style="height:150px;width:150px;" src="https://1000logos.net/wp-content/uploads/2020/06/Kawasaki-Logo.png"></div>
+        </td>
+        <td style=" padding: 0 18px;">   <div style="height: 150px;width: 150px;"><img style="height:150px;width:150px;" src="https://motosymbol.com/wp-content/uploads/2021/02/KTM-Logo.png"></div>
+        </td>
+        <td style=" padding: 0 18px;">   <div style="height: 150px;width: 150px;"><img style="height:150px;width:150px;" src="https://seeklogo.com/images/S/suzuki-logo-5311518DD9-seeklogo.com.png"></div>
+        </td>
+      </tr>
+
+      <tr>
+        <td style=" padding: 0 22px;color: #7f7f7f;">
+          <div style="height: 150px;width: 150px;padding: 2px;font-weight: bolder;">BMW </div>
+        </td>
+        <td  style=" padding: 0 18px;color: #7f7f7f;"> <div style="height: 150px;width: 150px;font-weight: bolder;">HONDA</div>
+        </td>
+        <td style=" padding: 0 18px;color: #7f7f7f;">   <div style="height: 150px;width: 150px;font-weight: bolder;">DUCATI</div>
+        </td>
+        <td style=" padding: 0 18px;color: #7f7f7f;">   <div style="height: 150px;width: 150px;font-weight: bolder;">KAWASAKI</div>
+        </td>
+        <td style=" padding: 0 18px;color: #7f7f7f;">   <div style="height: 150px;width: 150px;font-weight: bolder;">KTM</div>
+        </td>
+        <td style=" padding: 0 18px;color: #7f7f7f;">   <div style="height: 150px;width: 150px;font-weight: bolder;">SUZUKI</div>
+        </td>
+      </tr>
+    </table></div>
+  </div></div>
+</div>
+<div box style="  background-color: rgb(0, 0, 0);
+  ">
+    <div class="container" style="margin-top: 40px;">
+      <img  src="https://images.pexels.com/photos/1796090/pexels-photo-1796090.jpeg?cs=srgb&dl=pexels-oleg-magni-1796090.jpg&fm=jpg"  style="width:100%; height:450px;object-fit: cover;opacity: 0.2;">
+      
+      <div  style="   position: absolute;
+ top: 50%;
+ left: 70%;
+  transform: translate(-50%, -50%);
+      font-family: 'Poppins', sans-serif;">
+<div style="height: 18em;width: 30em;float: left;text-align: left;margin-left: 20px;text-align: left;">
+DOWNLOAD OUR APP<BR>
+  <span STYLE="font-size: x-large;">GET OUR APP FOR YOUR MOBILE</span><BR><br>
+    <i class="far fa-hand-point-right"></i><SPAN STYLE="font-size: smaller;"> Find nearby cars in your network with Scholar</SPAN><br><br>
+    <i class="far fa-hand-point-right"></i><SPAN STYLE="font-size: smaller;"> Browse real hirers reviews to know why choose Scholar</SPAN><br><br>
+    <i class="far fa-hand-point-right"></i><SPAN STYLE="font-size: smaller;"> Rent a car so easy with a tap</SPAN><br><br>
+    <i class="far fa-hand-point-right"></i><SPAN STYLE="font-size: smaller;"> Rent a car so easy with a tap</SPAN><br><br>
+    <div style="height: 4em;width: 14em;float: left;text-align: left;text-align: left;border-style: solid;">
+      <i class="fab fa-android"style="font-size: 48px; margin-top: 10px;margin-left: 10px;"></i><DIV STYLE="height: 4EM; width: 8EM;margin-left: 80PX;margin-TOP: -50PX;"><span style="font-size: 10px;">DOWNLOAD FROM</span><br><span style="font-size: 15PX; font-weight: bolder;">WINDOW STORE</span></DIV>
+    </div>
+    <div style="height: 4em;width: 14em;float: left;text-align: left;margin-left: 20px;text-align: left;border-style: solid;">
+      <i class="fab fa-apple" style="font-size: 48px; margin-top: 10px;margin-left: 10px;"></i><DIV STYLE="height: 4EM; width: 8EM; margin-left: 80PX;margin-TOP: -50PX;"><span style="font-size: 10px;">DOWNLOAD FROM</span><br><span style="font-size: 15PX; font-weight: bolder;">APPLE STORE</span></DIV>
+    </div>
+  </div>
+        
+      </div>
+   
+      <div  style="   position: absolute;
+      top: 50%;
+      left: 20%;
+       transform: translate(-50%, -50%);
+           font-family: 'Poppins', sans-serif;">
+     <div style="height: 25em;width: 30em;float: left;text-align: left;margin-left: 50px;">
+    <IMG style="height: 25em;width: 30em;" SRC="https://www.clipartmax.com/png/middle/153-1534410_phone-in-hand-mobile-phone-hand-png.png">
+    </div>
+             
+           </div>
+    </div></div>
+    <div style="margin-left: 100px;margin-right: -10px;">
+    <div style="height: 10em;width: 13em;float: left;text-align: left;"> <img style="float: left;" height="30em" width="160em" src="https://gust-production.s3.amazonaws.com/uploads/startup/logo_image/118560/logo.png"/><br><br>  <span style="font-size: 10px;color: #7f7f7f;">  Lorem ipsum dolor sit amet, </span><br>
+      <span style="font-size: 10px;text-align: left;color: #7f7f7f;">  consectetur adipiscing elit. Curabitur et</span> <br>
+        <span style="font-size: 10px;text-align: left;color: #7f7f7f;">  dolor eget erat fringilla port.</span><br><br>
+      <img width="180em" height="30em" src="https://www.freepnglogos.com/uploads/app-store-logo-png/google-play-and-apple-app-store-logos-22.png"></div>
+    <div style="height: 10em;width: 10em;float: left;margin-left: 1.5em; text-align: left;">Follow Us<br><br>
+      <table style="border: none;">
+
+        <tr>
+          <td>
+            <div class="socials"><i class="fab fa-facebook" style="font-size:23px;"></i></div>
+          </td>
+          <td><a href="#" target="_blank" style="color: #7f7f7f; text-decoration: none;">Facebook</a></td>
+
+        </tr>
+        <tr>
+          <td>
+            <div class="socials"> <i class="fab fa-twitter" style="font-size:23px;"></i></div>
+          </td>
+          <td><a href="#" style="color: #7f7f7f; text-decoration: none;">Twitter</a></td>
+
+        </tr>
+        <tr>
+          <td>
+            <div class="socials"><i class="fab fa-linkedin-in" style="font-size:23px;"></i> </div>
+          </td>
+          <td><a href="#" style="color: #7f7f7f; text-decoration: none;">Linkedin </a></td>
+
+        </tr>
+        <tr>
+          <td>
+            <div class="socials"><i class="fab fa-google-plus" style="font-size:23px;"></i></div>
+          </td>
+          <td><a href="#" style="color: #7f7f7f; text-decoration: none;">Google </a></td>
+
+        </tr>
+      </table>
+    </div>
+    <div style="height: 10em;width: 10em;float: left;margin-left: 1.5em; text-align: left;">Quick Links<br><br>
+      <table style="border: none;">
+
+        <tr>
+        
+          <td><a href="#" target="_blank" style="color: #7f7f7f; text-decoration: none;">Sample page</a></td>
+
+        </tr>
+        <tr>
+         
+          <td><a href="#" style="color: #7f7f7f; text-decoration: none;">About us</a></td>
+
+        </tr>
+        <tr>
+          
+          <td><a href="#" style="color: #7f7f7f; text-decoration: none;">Blog </a></td>
+
+        </tr>
+        <tr>
+          
+          <td><a href="#" style="color: #7f7f7f; text-decoration: none;">Contact Us </a></td>
+
+        </tr>
+      </table>
+    </div>
+    <div style="height: 5em;width: 29.5em;float: left;margin-left: 1.5em;text-align: left;font-size: 15px;text-align: left;color: #7f7f7f;"><span style="color: #000000;">Signup for Weekly Newsletter</span><br>
+      <div class="news">
+       
+        <span class="foot">
+            We may send you information about related events, webinars,
+            products and services which we believe.
+        </span>
+
+        <form class="email"  style="margin:auto;max-width:100%">
+            <input type="text" placeholder="Enter your email address..." name="search2">
+            <button type="submit" style="background-color:seagreen ; " >SUBMIT</button>
+        </form>
+        
+     
+
+    </div>
+    <br>
+    copyright E&TC A 50 Roshini Kini All rights reserved
+    </div>
+      </table></div>
+      <button onclick="topFunction()" id="myBtn" title="Go to top"> <i class="fas fa-chevron-up"></i></button>
+      <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.402899730432!2d72.8596707138803!3d19.22126495238752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7c7aaca9343%3A0x4e2404467a117dd0!2sRadha%20Raman%20Enterprises!5e0!3m2!1sen!2sin!4v1637761790284!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</body>
+</html>
+</html>
